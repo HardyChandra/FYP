@@ -1,0 +1,196 @@
+﻿body {
+    background-color: #ffff;
+}
+
+#welcomePage {
+    background-color: #ffff;
+}
+
+a {
+    font-size: 20px;
+    color: #52ab98;
+}
+
+a:hover {
+    color: #2b6777;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+    color: #2b6777;
+}
+
+i {
+    color: #52ab98;
+}
+
+#content1 {
+    background-color: #2b6777;
+    height: 400px;
+    font-size: 18px;
+}
+
+#content2 {
+    background-image: url('../image/img1.jpg'); 
+    height: 400px;
+}
+
+#paragraph1 {
+    color: #f2f2f2;
+}
+
+p{
+    color: #ffff;
+}
+
+strong {
+    color: #ffff;
+    font-size: 25px;
+}
+
+.footer {
+    background-color: #ffff;
+    border-top: solid 2px #2b6777;
+    color: #2b6777;
+}
+
+#main-wrapper {
+    min-height: 100vh;
+}
+
+#defaultForm {
+    border: 1px solid #2b6777;
+    border-radius: 10px;
+    min-width: 50vh;
+}
+
+.form-control {
+    border-color: #2b6777;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #2b6777;
+}
+
+.form-control::placeholder {
+    color: #52ab98;
+ }
+
+#txtSearch {
+    color: #2b6777;
+    border-radius: 20px 0 0 20px;
+    border-color: #2b6777;
+    background-color: transparent;
+    
+}
+
+#txtSearch::placeholder{
+    color: #52ab98;
+}
+
+#txtName, #txtEmail, #txtCompany, #txtPassword, #txtConfirmationPassword, #txtPhoneNumber, #dtpDoB {
+    color: #2b6777;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#txtVotingStat{
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #2b6777;
+    color: #ffff;
+    border-color: #2b6777;
+}
+
+.btn-primary:hover {
+    background-color: #52ab98;
+    color: #ffff;
+    border-color: #52ab98;
+}
+
+.btn-primary.disabled, .btn-primary:disabled{
+    background-color: #dddd;
+    border-color: #dddd;
+    color: dimgray;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #2b6777;
+    color: #ffff;
+    border-color: #2b6777;
+}
+
+#btnSearch {
+    width: 120px;
+    border-radius: 0 20px 20px 0;
+    border-color: #2b6777;
+}
+
+#btnEdit a, #btnPassword a{
+    color: #ffff;
+}
+
+#btnEdit:hover a:hover, #btnPassword:hover a:hover {
+    color: #ffff;
+    text-decoration: none;
+}
+
+#btnSearch:hover {
+    border-color: #52ab98;
+}
+
+#icon {
+    background-color: #ffff;
+    font-size: 25px;
+    color: #2b6777;
+    width: 40px;
+}
+
+#icon2 {
+    background-color: #ffff;
+    font-size: 50px;
+    color: #2b6777;
+    width: 40px;
+}
+
+.navbar {
+    background-color: #ffff;
+    color: #52ab98;
+    border-bottom: solid 1px #2b6777;
+}
+
+.nav-link {
+    color: #52ab98 !important;
+}
+
+.nav-link:hover {
+    color: #2b6777 !important;
+}
+
+
+#homepage {
+    min-height: 100vh;
+}
+
+#homepageh2 {
+    color: #2b6777;
+}
+
+#homepagea {
+    color: #52ab98;
+    font-size: 23px;
+    text-decoration: underline solid #52ab98;
+}
+
+#homepagea:hover{
+    color: #2b6777;
+    text-decoration: underline solid #2b6777;
+}
+
+dt, dd {
+    color: #2b6777;
+    font-size: 20px
+}
+

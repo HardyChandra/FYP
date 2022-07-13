@@ -1,0 +1,60 @@
+﻿@model FYP.DatabaseModel.Admin
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+	<h1 class="text-center mt-5">Profile</h1>
+	<div>
+		<dl class="row mt-5">
+			<dt class="col-sm-3 text-left text-sm-center">
+				<span>
+					<i class="fa-solid fa-user"></i>
+				</span>
+			</dt>
+			<dd class="col-sm-3 text-left text-sm-center">
+				@Html.DisplayFor(model => model.admin_name)
+			</dd>
+			<dt class="col-sm-3 text-left text-sm-center">
+				<span>
+					<i class="fa-solid fa-envelope"></i>
+				</span>
+			</dt>
+			<dd class="col-sm-3 text-left text-sm-center">
+				@Html.DisplayFor(model => model.admin_email)
+			</dd>
+			<dt class="col-sm-3 text-left text-sm-center">
+				<span id="#">
+					<i class="fa-solid fa-calendar-days"></i>
+				</span>
+			</dt>
+			<dd class="col-sm-3 text-left text-sm-center">
+				@Html.DisplayFor(model => model.admin_dob)
+			</dd>
+			<dt class="col-sm-3 text-left text-sm-center">
+				<span>
+					<i class="fa-solid fa-phone"></i>
+				</span>
+			</dt>
+			<dd class="col-sm-3 text-left text-sm-center">
+				@Html.DisplayFor(model => model.admin_phone)
+			</dd>
+			<dt class="col-sm-3 text-left text-sm-center">
+				<span>
+					<i class="fa-solid fa-building"></i>
+				</span>
+			</dt>
+			<dd class="col-sm-3 text-left text-sm-center">
+				@Html.DisplayFor(model => model.admin_company)
+			</dd>
+		</dl>
+	</div>
+	<div class="mt-5 text-right">
+		<input type="button" class="btn btn-primary w-25" value="Edit" onclick="location.href='@Url.Action("Edit", "Admin", new {adminID = Model.admin_id})'" />
+		<input type="button" class="btn btn-primary w-25" value="Change Password" onclick="location.href='@Url.Action("Password", "Admin", new {adminID = Model.admin_id})'" />
+	</div>
+</div>
+
+

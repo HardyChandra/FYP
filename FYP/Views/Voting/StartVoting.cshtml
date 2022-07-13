@@ -1,0 +1,66 @@
+﻿@using FYP.Models.CandidateModel
+@model FYP.Models.AdminModel.HomepageViewModel
+
+@{
+	ViewData["Title"] = "StartVoting";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="mt-3 ml-3">
+	<a href="~/Voting/Dashboard"><span id="icon"><i class="fa-solid fa-arrow-left-long"></i></span></a>
+</div>
+<div class="text-center d-flex justify-content-center align-items-center flex-column" >
+	<div class="container">
+		<h2>@Html.DisplayFor(model => model.viewVoting.voting_title)</h2>
+		<div class="row justify-content-center my-5 ">
+			<div class="col-12 col-md-12 input-group mb-3">
+				<input asp-for="viewVoting.voting_id" class="form-control" id="txtVotingID" readonly>
+			</div>
+			<div class="col-12 col-md-12 input-group mb-3 flex-column">
+				<h5 class="control-label">Status</h5>
+				<input asp-for="viewVoting.voting_status" class="form-control w-100" id="txtVotingStat" readonly />
+			</div>
+			<div class="col-12 col-md-6 mb-3">
+				<h5 class="control-label">Voting Title</h5>
+				<input asp-for="viewVoting.voting_title" class="form-control" readonly />
+			</div>
+			<div class="col-12 col-md-6 mb-3">
+				<h5 class="control-label">Description</h5>
+				<textarea asp-for="viewVoting.voting_description" class="form-control" readonly></textarea>
+			</div>
+			<div class="col-12 col-md-6 mb-3">
+				<h5 class="control-label">Total Voter</h5>
+				<input asp-for="viewVoting.voting_total_voter" class="form-control" readonly />
+			</div>
+			<div class="col-12 col-md-6 mb-5">
+				<h5 class="control-label">Duration</h5>
+				<input asp-for="viewVoting.voting_duration" class="form-control" readonly />
+			</div>
+			<div class="col-12 col-md-12 mb-3">
+				<div class="row">
+					@foreach (ViewCandidate viewCandidate in Model.viewCandidate)
+					{
+						<div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">@viewCandidate.CandidateName</h5>
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">@viewCandidate.CandidateVision</li>
+									<li class="list-group-item">@viewCandidate.CandidateMission</li>
+								</ul>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+			<div class="mt-3 ml-auto d-flex flex-row">
+				<form method="post" asp-action="Start">
+					<button type="submit" class="btn btn-primary">Start</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+

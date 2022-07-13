@@ -1,0 +1,58 @@
+﻿@model FYP.Models.AdminModel.Login
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+<div class="mt-3 ml-3">
+	<a href="~/Home/Index"><span id="icon"><i class="fa-solid fa-arrow-left-long"></i></span></a>
+</div>
+<div id="main-wrapper" class="container d-flex flex-column justify-content-center align-items-center">
+	<section>
+		<form asp-action="Login" id="defaultForm">
+			<h3 class="my-3 text-center">Login</h3>
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			@if (ViewBag.Message != null)
+			{
+				<div class="alert alert-danger alert-dismissible fade show mx-3" role="alert">
+					@ViewBag.Message
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			}
+			<div class="mx-3">
+				<div class="input-group flex-nowrap p-2">
+					<span id="icon">
+						<i class="fa-solid fa-envelope mr-3"></i>
+					</span>
+					<input asp-for="Email" class="form-control" id="txtEmail" placeholder="Enter your email" autocomplete="off" />
+				</div>
+				<span asp-validation-for="Email" class="text-danger ml-5"></span>
+			</div>
+			<div class="mx-3">
+				<div class="input-group flex-nowrap p-2">
+					<span id="icon">
+						<i class="fa-solid fa-lock mr-3"></i>
+					</span>
+					<input asp-for="Password" class="form-control" id="txtPassword" placeholder="Enter your password" autocomplete="off" />
+				</div>
+				<span asp-validation-for="Password" class="text-danger ml-5"></span>
+			</div>
+			<div class="form-group text-center">
+				<input type="submit" value="Login" class="btn btn-primary w-50 mt-3" id="btnLogin" />
+			</div>
+			<div class="mb-5 text-center">
+				<a class="text-decoration-none" href="~/Admin/Register">
+					Sign Up
+				</a>
+			</div>
+		</form>
+	</section>
+</div>
+
+@section Scripts {
+    @{
+	await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

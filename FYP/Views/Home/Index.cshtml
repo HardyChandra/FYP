@@ -1,0 +1,50 @@
+﻿@model FYP.Models.VotingModel.VotingSearch
+
+@{
+	ViewData["Title"] = "Homepage";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/style.css" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<div>
+
+	<div class="px-3 py-2 d-flex" id="welcomePage">
+		<a class="p-2 w-100 text-decoration-none" href="~/Home/Index"><h2>✓iera</h2></a>
+		<a class="p-2 flex-shrink-1 text-decoration-none mt-1" href="~/Admin/Login" style="right: 10px">
+			Login
+		</a>
+	</div>
+	<div class="row">
+		<div class="col-12 col-md-8" id="content1">
+			<p class="px-3 ml-2" id="paragraph1">
+				<strong>✓iera</strong> is a secure internet-based election system using the blockchain-technology which is
+				to ensure an election can be done effectively, efficiently and more secure.
+			</p>
+		</div>
+		<div class="col-12 col-md-4" id="content2"></div>
+	</div>
+	<form asp-action="Search">
+		<div class="mt-5 text-center d-flex align-items-center justify-content-center flex-column">
+			<h3 class="text-center mr-3">Enter the Vote's ID</h3>
+			@if (ViewBag.Message != null)
+			{
+				<div class="alert alert-danger alert-dismissible fade show mx-3 mt-3" role="alert">
+					@ViewBag.Message
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			}
+			<div class="input-group mt-3 mb-5 w-75">
+				<input asp-for="VotingID"
+					   type="text"
+					   class="form-control"
+					   id="txtSearch"
+					   placeholder="Enter the Vote's ID"
+					   autocomplete="off" required/>
+				<input type="submit" value="Search" class="btn btn-primary" id="btnSearch" />
+			</div>
+		</div>
+	</form>
+</div>

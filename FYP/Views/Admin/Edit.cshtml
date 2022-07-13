@@ -1,0 +1,87 @@
+﻿@model FYP.DatabaseModel.Admin
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="mt-3 ml-3">
+	<a href="~/Admin/Profile"><span id="icon"><i class="fa-solid fa-arrow-left-long"></i></span></a>
+</div>
+<div id="main-wrapper" class="container d-flex flex-column justify-content-center align-items-center">
+	<form method="post" asp-action="Edit" id="defaultForm">
+		<h3 class="my-3 text-center">Edit</h3>
+		 @Html.HiddenFor(model => model.admin_id)
+		 @if (ViewBag.Message != null)
+			{
+				<div class="alert alert-danger alert-dismissible fade show mx-3" role="alert">
+					@ViewBag.Message
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			}
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="mx-3">
+			<div class="input-group flex-nowrap p-2">
+				<span id="icon">
+					<i class="fa-solid fa-user mr-3"></i>
+				</span>
+				<input asp-for="admin_name" class="form-control" id="txtName" placeholder="e.g Hardy" autocomplete="off" />
+			</div>
+			<span asp-validation-for="admin_name" class="text-danger ml-5"></span>
+		</div>
+		<div class="mx-3">
+			<div class="input-group flex-nowrap p-2">
+				<span id="icon">
+					<i class="fa-solid fa-envelope mr-3"></i>
+				</span>
+				<input asp-for="admin_email" class="form-control" id="txtEmail" placeholder="e.g hardy@mail.com" autocomplete="off" />
+			</div>
+			<span asp-validation-for="admin_email" class="text-danger ml-5"></span>
+		</div>
+		<div class="mx-3">
+			<div class="input-group flex-nowrap p-2">
+				<span id="icon">
+					<i class="fa-solid fa-building mr-3"></i>
+				</span>
+				<input asp-for="admin_company" class="form-control" id="txtCompany" placeholder="e.g Google" autocomplete="off" />
+			</div>
+			<span asp-validation-for="admin_company" class="text-danger ml-5"></span>
+		</div>
+		<div class="mx-3">
+			<div class="input-group flex-nowrap p-2">
+				<span id="icon">
+					<i class="fa-solid fa-phone mr-3"></i>
+				</span>
+				<input asp-for="admin_phone" type="text" class="form-control" id="txtPhoneNumber" onkeypress="return isNumberKey(event)" placeholder="e.g 0141234567" autocomplete="off" />
+			</div>
+			<span asp-validation-for="admin_phone" class="text-danger ml-5"></span>
+		</div>
+		<div class="mx-3">
+			<div class="input-group flex-nowrap p-2">
+				<span id="icon">
+					<i class="fa-solid fa-calendar-days mr-3"></i>
+				</span>
+				<input asp-for="admin_dob" class="form-control" id="dtpDoB" />
+			</div>
+			<span asp-validation-for="admin_dob" class="text-danger ml-5"></span>
+		</div>
+
+		<div class="form-group text-center">
+			<input type="submit" value="Save" class="btn btn-primary w-50 my-3"/>
+		</div>
+	</form>
+</div>
+
+
+<script>
+	function isNumberKey(evt)
+	{
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+		return false;
+
+		return true;
+	}
+</script>
